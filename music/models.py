@@ -9,9 +9,9 @@ class Music(models.Model):
   def __str__(self):
     return str(self.song)
 
-@property
-def get_file_name(filename):
-  full_path = filename
-  base = os.path.basename(full_path)
-  file_name = os.path.splitext(base)[0]
-  return file_name
+  @property
+  def file_name(self):
+    full_path = self.song.name
+    base = os.path.basename(full_path)
+    file_name = os.path.splitext(base)[0]
+    return file_name

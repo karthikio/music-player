@@ -6,5 +6,5 @@ urlpatterns = [
   path('json/songs/', JsonsongsView, name='json-songs-view'),
   path('json/song/<int:pk>/', JsonsongView, name='json-song-view'),
 
-  path('songs/', songsView, name='songs-view'),
+  path('music-player/', songsView, name='songs-view'),
 ]

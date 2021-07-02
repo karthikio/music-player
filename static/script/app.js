@@ -1,4 +1,5 @@
 let trackListContainer = document.querySelector('.track-list-container');
+let songContainer = document.querySelector('.song-container');
 let url;
 
 
@@ -21,16 +22,16 @@ fetch('http://127.0.0.1:8000/json/songs/')
       let songPk = document.querySelector(`#song${[song]}`)
       // get single track
       songPk.addEventListener('click', e => {
-        trackListContainer.innerHTML = "";
         fetch(`http://127.0.0.1:8000/json/song/${songs[song].pk}/`)
         .then(res => res.json())
         .then(data => {
           let song = data;
-          console.log(song)
+          console.log(songContainer)
           url = `http://127.0.0.1:8000/media/${song[0].fields.song}`;
-          trackListContainer.innerHTML += `
+          let outputSong = `
             <audio controls autoplay src='${url}'></audio>
-          `
+          `;
+          songContainer.innerHTML = outputSong;
         })
         .catch(error => console.log(error))
       })      

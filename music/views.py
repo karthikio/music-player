@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .models import Music
 import json
 from django.core import serializers
+from .forms import MusicForm
 
 
 def jsonsongsView(request):
@@ -19,9 +20,20 @@ def jsonsongView(request, pk):
   return JsonResponse(data, safe=False)
 
 
-def jsonPostview(request):
-  # if request.method == "POST":
-  pass
+def songPostView(request):
+  form = MusicForm()
+  if request.method == "POST":
+    form = MusicForm(request.POST, request.FILES)
+    if form.is_valid():
+      form.save()
+      return redirect('songs-view')
+  else: 
+    form = MusicForm()
+  
+  context = {
+    'form': form,
+  }
+  return render(request, 'music/upload.html', {})
 
 
 def songsView(request):

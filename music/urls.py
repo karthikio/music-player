@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import jsonsongsView, jsonsongView, songsView
+from .views import jsonsongsView, jsonsongView, songsView, songPostView
 
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
   path('json/song/<int:pk>/', jsonsongView, name='json-song-view'),
 
   path('music-player/', songsView, name='songs-view'),
+  path('upload/', songPostView, name='song-post-view'),
 ]

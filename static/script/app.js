@@ -10,18 +10,21 @@ fetch('http://127.0.0.1:8000/json/songs/')
     let songs = data;
     for (let song in songs){
       url = `http://127.0.0.1:8000/media/${songs[song].fields.song}`;
+      console.log(songs[song])
       
       let output = `
-        <h1 id='song${[song]}' class='song-pk'>${songs[song].pk}</h1>
+        <div  class='song-name' id='song${[song]}'>
+          <p>${songs[song].fields.name}</p>
+        </div>
       `;
       trackListContainer.innerHTML += output;
       
     }
 
     for(let song in songs){
-      let songPk = document.querySelector(`#song${[song]}`)
+      let songName = document.querySelector(`#song${[song]}`)
       // get single track
-      songPk.addEventListener('click', e => {
+      songName.addEventListener('click', e => {
         fetch(`http://127.0.0.1:8000/json/song/${songs[song].pk}/`)
         .then(res => res.json())
         .then(data => {

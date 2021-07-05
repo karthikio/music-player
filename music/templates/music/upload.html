@@ -7,6 +7,7 @@
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="inputs-container">
+        <p>Upload only Mp3, audio, mpeg files!</p>
         <input type="file" name="song" required="" id="id_song">
         <label class="label_fav" for="id_favourite">
           <input type="checkbox" name="favourite" id="id_favourite">

@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
 <body>
+  <div class="nav-container">
+    <h2>Playlist App</h2>
+    <nav>
+      <ul>
+        <li><a href="{% url 'songs-view' %}">Home</a></li>
+        <li><a href="{% url 'song-post-view' %}">Add Song</a></li>
+      </ul>
+    </nav>
+  </div>
   {% block content %}
   {% endblock %}
   <script src="{% static 'script/app.js' %}"></script>

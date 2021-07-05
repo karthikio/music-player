@@ -33,7 +33,7 @@ def songPostView(request):
   context = {
     'form': form,
   }
-  return render(request, 'music/upload.html', {})
+  return render(request, 'music/upload.html', context)
 
 
 def songsView(request):

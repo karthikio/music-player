@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Upload Song</h1>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.song}}
-    {{form.favourite}}
-    <button type="submit">Upload</button>
-  </form>
+  <div class="upload-song-container">
+    <div class="upload-song">
+      <h1 class="color-pink upload-title">Upload Song</h1>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="inputs-container">
+        <input type="file" name="song" required="" id="id_song">
+        <label class="label_fav" for="id_favourite">
+          <input type="checkbox" name="favourite" id="id_favourite">
+          Favourite
+        </label>
+        <button class="upload-btn" type="submit">Upload</button>
+      </div>
+    </form>
+    </div>
+  </div>
 {% endblock %}

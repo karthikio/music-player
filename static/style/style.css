@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: #1e1e1e;
+}
+
+.color-pink{
+  color: #fa3264;
+}
+
+.track-list-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.song-name{
+  padding: 10px 20px;
+  margin: 5px 20px;
+  border-bottom: 1px solid #4f4f4f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.upload-song-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.upload-song{
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.upload-title{
+  display: flex;
+  justify-content: center;
+}
+
+.inputs-container{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: #fff;
+  margin: 20px;
+  padding: 10px;
+}
+
+#id_song::-webkit-file-upload-button{
+  border: 1px solid #0d8aff;
+  background-color: #18afeb48;
+  color: #0b89ff;
+  outline: none;
+  border-radius: 2px;
+}
+
+#id_song, .label_fav{
+  margin: 10px 0;
+}
+
+.upload-btn{
+  width: 140px;
+  height:  20px;
+  border: 1px solid #0d8aff;
+  background-color: #18afeb48;
+  color: #0b89ff;
+  outline: none;
+  border-radius: 4px;
+  margin: 2px 0;
+}
